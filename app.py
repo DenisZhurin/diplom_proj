@@ -74,19 +74,23 @@ with st.container() as poteri_napora_v_konfuzore:
             st.markdown(round(var_hk, 2))
 with st.container() as chislo_raynoldsa:
     st.markdown('Число Рейнольдса(Re)')
-    func5, res5 = st.columns(2)
+    space5, func5, res5 = st.columns(3)
+    with space5:
+        print()
     with func5:
         f = simplify((d*V)/ʋ)
         st.write(f)
     with res5:
         st.write("Ответ:")
         if var_v0:
-            var_koef = 326000
+            var_koef = 0.000000299
             var_Re = (var_d*var_V/var_koef)  # Число Рейнольдса
             st.markdown(round(var_Re, 2))
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля(λ, )')
-    func6, res6 = st.columns(2)
+    space6, func6, res6 = st.columns(3)
+    with space6:
+        print()
     with func6:
         f = simplify(0.11*(68/Re+Ke/d)*0.25)
         st.write(f)
@@ -125,19 +129,23 @@ with st.container() as koef_sopr_trenia:
             st.markdown(round(var_tr, 2))
 with st.container() as koef_rasher:
     st.markdown('Коэффициент сопротивления расширения (ξрасш, )')
-    func9, res9 = st.columns(2)
+    space9, func9, res9 = st.columns(3)
+    with space9:
+        print()
     with func9:
         f = simplify(((1-(n**2))*2)*3.2*Kд*tan((α/2)**1.25))
         st.write(f)
     with res9:
         st.write("Ответ:")
         if var_n:
-            var_kd = 0.24*log(var_Re)+2.869
-            var_rasch = (((1-var_n**2)**2)*3.2*var_kd*tan(var_sin/2)**1.25)  # Коэффициента сопротивления расширения
-            st.markdown(round(var_rasch, 2))
+            var_kd = -0.24*log(var_Re)+2.869
+            var_rasch = (((1-var_n**2)**2)*3.2*var_kd*tan((var_sin/2)**1.25))  # Коэффициента сопротивления расширения
+            st.write(var_rasch)
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ, )')
-    func10, res10 = st.columns(2)
+    space10, func10, res10 = st.columns(3)
+    with space10:
+        print()
     with func10:
         f = simplify(ξтр+ξрасш)
         st.write(f)
@@ -148,7 +156,9 @@ with st.container() as soprot_diffuzora:
             st.markdown(round(var_e, 2))
 with st.container() as poteri_napora:
     st.markdown('Потери напора на диффузоре  (hд, )')
-    func11, res11 = st.columns(2)
+    space11, func11, res11 = st.columns(3)
+    with space11:
+        print()
     with func11:
         f = simplify((ξ*V0**2)/(2*g))
         st.write(f)
@@ -159,7 +169,9 @@ with st.container() as poteri_napora:
             st.markdown(round(var_hd, 2))
 with st.container() as itog:
     st.markdown('Итоговая формула (h, )')
-    func12, res12 = st.columns(2)
+    space12, func12, res12 = st.columns(3)
+    with space12:
+        print()
     with func12:
         f = simplify(hk+hl+hд)
         st.write(f)
