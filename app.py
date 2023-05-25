@@ -24,12 +24,12 @@ with st.container() as rashod_setevoi_vodi:
         Tp = st.slider('Температура воды в подающем трубопроводе (Тп)', 0, 200, 95)
         To = st.slider('Температура воды в обратном трубопроводе (Тоб)', 0, 150, 70)
     with func1:
-        f = simplify(-Qот*/(Tп - Tоб))
+        f = simplify(-Qот*1000 / (Tп - Tоб))
         st.write(f)
     with res1:
         st.write("Ответ:")
         if var_Qot:
-            var_G = var_Qot*/(Tp-To) #Расчет расхода сетевой воды
+            var_G = var_Qot*1000/(Tp-To) #Расчет расхода сетевой воды
             st.markdown(round(var_G, 2))
 
 with st.container() as obomniy_rashod_vodi:
