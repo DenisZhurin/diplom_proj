@@ -29,7 +29,7 @@ with st.container() as rashod_setevoi_vodi:
     with res1:
         st.write("Ответ:")
         if var_Qot:
-            var_G = var_Qot*10000/(Tp-To) #Расчет расхода сетевой воды
+            var_G = var_Qot*/(Tp-To) #Расчет расхода сетевой воды
             st.markdown(round(var_G, 2))
 
 with st.container() as obomniy_rashod_vodi:
