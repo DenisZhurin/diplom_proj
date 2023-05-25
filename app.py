@@ -20,11 +20,11 @@ with st.container() as rashod_setevoi_vodi:
     st.markdown('Расчет расхода сетевой воды:')
     input1, func1, res1 = st.columns(3)
     with input1:
-        var_Qot = st.number_input("Введите тепловую нагрузку отопления (G, м3/час)")
+        var_Qot = st.number_input("Введите тепловую нагрузку отопления (G, м3/сек)")
         Tp = st.slider('Температура воды в подающем трубопроводе (Тп)', 0, 200, 95)
         To = st.slider('Температура воды в обратном трубопроводе (Тоб)', 0, 150, 70)
     with func1:
-        f = simplify(-Qот * 1000 / (Tп - Tоб))
+        f = simplify(-Qот * 10000 / (Tп - Tоб))
         st.write(f)
     with res1:
         st.write("Ответ:")
