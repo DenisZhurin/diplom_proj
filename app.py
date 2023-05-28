@@ -180,3 +180,59 @@ with st.container() as itog:
         if var_n:
             var_var = (var_hk+var_hd+var_hl)  # Коэффициент сопротивления диффузора
             st.markdown(round(var_var, 2))
+with st.container() as row_description:
+    var_link = st.button(label=' Счётчик подходящий для посчитаных параметров ')
+    if var_d == 0 or var_L == 0:
+        i = 1
+        if var_link: st.write("Введите данные")
+    if var_d == 25:
+        if var_L == 160:
+            if var_link: open_link(
+                "https://www.vodomer.su/catalog/schetchiki-vody-i-raskhodomery/elektromagnitnye-raskhodomery/elektromagnitnyy-raskhodomer-vse-m-bi-dn25/")
+        elif var_L == 110:
+            if var_link: open_link(
+                "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du_25/")
+    if var_d == 32:
+        if var_L == 185:
+            if var_link: open_link("https://podolsk.specarmatura.ru/catalog/raskhodomer_vse/raskhodomer_vse_bi_du_32/")
+        elif var_L == 140:
+            if var_link: open_link(
+                "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du_32/")
+    if var_d == 40:
+        if var_L == 185:
+            if var_link: open_link("https://msk.specarmatura.ru/catalog/raskhodomer_vse/raskhodomer_vse_bi_du_40/")
+        elif var_L == 170:
+            if var_link: open_link(
+                "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du_40/")
+    if var_d == 50:
+        if var_L == 200:
+            if var_link: open_link("https://msk.specarmatura.ru/catalog/raskhodomer_vse/raskhodomer_vse_bi_du_50/")
+        elif var_L == 180:
+            if var_link: open_link("https://msk.specarmatura.ru/catalog/raskhodomer_vse/raskhodomer_vse_bi_du_50/")
+    if var_d == 65 and var_L == 200:
+        if var_link: open_link(
+            "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du_65/")
+    if var_d == 80:
+        if var_L == 230:
+            st.write("Расходомер вихревой электромагнитный (дороже)")
+            var_link_1 = st.button(label=' Расходомер подходящий для посчитаных параметров ')
+            if var_link_1: open_link(
+                "https://serpuhov.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du_80/")
+            st.write("Расходомер электромагнитный фланцевый (дешевле)")
+            var_link_2 = st.button(label=' Расходомер подходящий для посчитаных параметров ')
+            if var_link_2: open_link(
+                "https://serpuhov.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du_80/")
+    if var_d == 100:
+        if var_L == 250:
+            if var_link: open_link("https://msk.specarmatura.ru/catalog/raskhodomer_vse/raskhodomer_vse_bi_du_100/")
+        elif var_L == 270:
+            if var_link: open_link(
+                "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du100/")
+    if var_d == 150:
+        if var_L == 320:
+            if var_link: open_link("https://msk.specarmatura.ru/catalog/raskhodomer_vse/raskhodomer_vse_bi_du_150/")
+        elif var_L == 370:
+            if var_link: open_link(
+                "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du150/")
+    if (var_d > 0 or var_L > 0) and i != 1:
+        if var_link: st.write("Введенны неккоректные данные")
