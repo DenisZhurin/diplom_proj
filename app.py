@@ -15,7 +15,7 @@ Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд
 #Tp = 95 #температура воды в подающем трубопроводе
 #To = 70 #температура воды в обратном трубопроводе
 st.set_page_config(layout = "wide")
-st.title('Денис ВКР')
+st.title('Журин Денис ВКР')
 with st.container() as rashod_setevoi_vodi:
     st.markdown('Расчет расхода сетевой воды:')
     input1, func1, res1 = st.columns(3)
