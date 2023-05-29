@@ -30,7 +30,7 @@ with st.container() as rashod_setevoi_vodi:
         st.write("Ответ:")
         if var_Qot:
             var_G = var_Qot*1000/(Tp-To) #Расчет расхода сетевой воды
-            st.markdown(round(var_G, 2))
+            st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
     st.markdown('Расчет объёмного расчёта воды (Qоб, :')
@@ -44,7 +44,7 @@ with st.container() as obomniy_rashod_vodi:
         st.write("Ответ:")
         if var_ro:
             var_Gob = var_G/var_ro #Объемный расход воды
-            st.markdown(round(var_Gob, 2))
+            st.markdown(round(var_Gob, 7))
 with st.container() as skorost_vodi_v_trube:
     st.markdown('Расчет скорости воды в трубе(V, :')
     input3, func3, res3 = st.columns(3)
@@ -71,7 +71,7 @@ with st.container() as poteri_napora_v_konfuzore:
         st.write("Ответ:")
         if var_v0:
             var_hk = (0.05*var_v0**2/(2*9.81))  # Потери напора в конфузоре
-            st.markdown(round(var_hk, 2))
+            st.markdown(round(var_hk, 7))
 with st.container() as chislo_raynoldsa:
     st.markdown('Число Рейнольдса(Re)')
     space5, func5, res5 = st.columns(3)
@@ -85,7 +85,7 @@ with st.container() as chislo_raynoldsa:
         if var_v0:
             var_koef = 0.000000299
             var_Re = (var_d*var_V/var_koef)  # Число Рейнольдса
-            st.markdown(round(var_Re, 2))
+            st.markdown(round(var_Re, 10))
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля(λ, )')
     space6, func6, res6 = st.columns(3)
@@ -98,7 +98,7 @@ with st.container() as formula_altuchla:
         st.write("Ответ:")
         if var_v0:
             var_lam = (0.11*(68/var_Re+0.5/var_d)**0.25)  # Универсальная формула Альтшуля
-            st.markdown(round(var_lam, 2))
+            st.markdown(round(var_lam, 7))
 with st.container() as uravnenie_darsi:
     st.markdown('**Уравнение Дарси(hl, :')
     input7, func7, res7 = st.columns(3)
@@ -111,7 +111,7 @@ with st.container() as uravnenie_darsi:
         st.write("Ответ:")
         if var_L:
             var_hl = (var_lam*var_L/var_d*(var_V**2)/(2*9.81))  # Линейные потери напора на прямом
-            st.markdown(round(var_hl, 2))
+            st.markdown(round(var_hl, 7))
 
 with st.container() as koef_sopr_trenia:
     st.markdown('Коэффициент сопротивления трения (ξтр, :')
@@ -126,7 +126,7 @@ with st.container() as koef_sopr_trenia:
         st.write("Ответ:")
         if var_n:
             var_tr = (var_lam/(8*sin(var_sin/2))*(1-var_n**4))  # Kоэффициент сопротивления трения
-            st.markdown(round(var_tr, 2))
+            st.markdown(round(var_tr, 7))
 with st.container() as koef_rasher:
     st.markdown('Коэффициент сопротивления расширения (ξрасш, )')
     space9, func9, res9 = st.columns(3)
@@ -153,7 +153,7 @@ with st.container() as soprot_diffuzora:
         st.write("Ответ:")
         if var_n:
             var_e = var_tr+var_rasch  # Коэффициент сопротивления диффузора
-            st.markdown(round(var_e, 2))
+            st.markdown(round(var_e, 7))
 with st.container() as poteri_napora:
     st.markdown('Потери напора на диффузоре  (hд, )')
     space11, func11, res11 = st.columns(3)
@@ -166,7 +166,7 @@ with st.container() as poteri_napora:
         st.write("Ответ:")
         if var_n:
             var_hd = (var_e*var_v0**2/2*9.81)  # Коэффициент сопротивления диффузора
-            st.markdown(round(var_hd, 2))
+            st.markdown(round(var_hd, 7))
 with st.container() as itog:
     st.markdown('Итоговая формула (h, )')
     space12, func12, res12 = st.columns(3)
@@ -179,7 +179,7 @@ with st.container() as itog:
         st.write("Ответ:")
         if var_n:
             var_var = (var_hk+var_hd+var_hl)  # Коэффициент сопротивления диффузора
-            st.markdown(round(var_var, 2))
+            st.markdown(round(var_var, 7))
 with st.container() as row_description:
     var_link = st.button(label=' Счётчик подходящий для посчитаных параметров ')
     if var_d == 0 or var_L == 0:
