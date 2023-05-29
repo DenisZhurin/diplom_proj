@@ -58,7 +58,7 @@ with st.container() as skorost_vodi_v_trube:
         st.write("Ответ:")
         if var_d:
             var_V = (4000*var_Q)/(var_d**2*math.pi)  # Объемный расход воды
-            st.markdown(round(var_V, 2))
+            st.markdown(round(var_V, 7))
 with st.container() as poteri_napora_v_konfuzore:
     st.markdown('Полери напора в конфузоре(hk, :')
     input4, func4, res4 = st.columns(3)
