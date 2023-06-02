@@ -43,7 +43,7 @@ with st.container() as obomniy_rashod_vodi:
     with res2:
         st.write("Ответ:")
         if var_ro:
-            var_Gob = var_G/var_ro #Объемный расход воды
+            var_Gob = (var_G/var_ro)*1000 #Объемный расход воды
             st.markdown(round(var_Gob, 7))
 with st.container() as skorost_vodi_v_trube:
     st.markdown('Расчет скорости воды в трубе(V, м/с :')
