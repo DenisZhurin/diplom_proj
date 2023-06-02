@@ -14,8 +14,8 @@ def open_link(url, new_tab=True):
     st.bokeh_chart(div)
 
 
-Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд = symbols(
-    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд ")  # переменные для формул
+Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2 = symbols(
+    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2")  # переменные для формул
 # Qot = 0.6565 #Тепловая нагрузка отопление
 # Tp = 95 #температура воды в подающем трубопроводе
 # To = 70 #температура воды в обратном трубопроводе
@@ -118,6 +118,21 @@ with st.container() as koef_pol:
         if var_d:
             var_koef_ner = -0.24*math.log(10, var_Re)+2.869
             st.markdown(var_koef_ner) 
+            
+ with st.container() as koef_sopr_trenia:
+    st.markdown('Коэффициент сопротивления расширения(ξтр,')
+    input8, func8, res8 = st.columns(3)
+    with input8:
+        var_sin = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
+        var_D2 = st.number_input("Диаметр после диффузора (D2, )")
+    with func8:
+        f = simplify(Kд*3.2*(1-((d/D2)**2))**2*tn(d/2)**1.25)
+        st.write(f)
+    with res8:
+        st.write("Ответ:")
+        if var_D2:
+            var_tr = (var_koef_ner*3.2*(1-((var_d/var_D2)**2))**2*tn(var_d/2)**1.25)  # Kоэффициент сопротивления трения
+            st.markdown(round(var_tr, 7))
 
 with st.container() as uravnenie_darsi:
     st.markdown('Уравнение Дарси(hl, м в. ст.,')
@@ -133,20 +148,6 @@ with st.container() as uravnenie_darsi:
             var_hl = (var_lam * var_L / var_d * (var_V ** 2) / (2 * 9.81))  # Линейные потери напора на прямом
             st.markdown(round(var_hl, 7))
 
-with st.container() as koef_sopr_trenia:
-    st.markdown('Коэффициент сопротивления трения (ξтр,')
-    input8, func8, res8 = st.columns(3)
-    with input8:
-        var_sin = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
-        var_n = st.number_input("Безразмерный коэффициент степени расширения  (n, )")
-    with func8:
-        f = simplify(λ / (8 * sin(α / 2)) * (1 - n ** 4))
-        st.write(f)
-    with res8:
-        st.write("Ответ:")
-        if var_n:
-            var_tr = (var_lam / (8 * sin(var_sin / 2)) * (1 - var_n ** 4))  # Kоэффициент сопротивления трения
-            st.markdown(round(var_tr, 7))
 with st.container() as koef_rasher:
     st.markdown('Коэффициент сопротивления расширения (ξрасш)')
     space9, func9, res9 = st.columns(3)
