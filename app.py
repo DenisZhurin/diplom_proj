@@ -64,7 +64,7 @@ with st.container() as skorost_vodi_v_trube:
             var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
             st.markdown(round(var_V, 7))
 with st.container() as poteri_vazkost:
-    st.markdown('Кинематическая вязкость воды(ʋ, м^2/с')  # Кинематическая вязкость воды
+    st.markdown('Кинематическая вязкость воды(ʋ, м^2/с)')  # Кинематическая вязкость воды
     input_new, func_new, res_new = st.columns(3)
     with input_new:
         ""
@@ -76,19 +76,6 @@ with st.container() as poteri_vazkost:
         if var_d:
             var_mu = 0.00000178 / (1 + 0.037 + Tp + 0.000221 * Tp ** 2)
             st.markdown(var_mu)
-with st.container() as poteri_napora_v_konfuzore:
-    st.markdown('Потери напора в конфузоре(hk')
-    input4, func4, res4 = st.columns(3)
-    with input4:
-        var_v0 = st.number_input("Cкорость воды в узком сечении (V0, м/c )")
-    with func4:
-        f = simplify(ξk * V0 / (2 * g))
-        st.write(f)
-    with res4:
-        st.write("Ответ:")
-        if var_v0:
-            var_hk = (0.05 * var_v0 ** 2 / (2 * 9.81))  # Потери напора в конфузоре
-            st.markdown(round(var_hk, 7))
 with st.container() as chislo_raynoldsa:
     st.markdown('Число Рейнольдса(Re)')
     space5, func5, res5 = st.columns(3)
@@ -117,7 +104,7 @@ with st.container() as formula_altuchla:
             var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
             st.markdown(round(var_lam, 7))
 with st.container() as uravnenie_darsi:
-    st.markdown('**Уравнение Дарси(hl, м в. ст.,')
+    st.markdown('Уравнение Дарси(hl, м в. ст.,')
     input7, func7, res7 = st.columns(3)
     with input7:
         var_L = st.number_input("Длина прямолинейного участка (L, мм)")
