@@ -38,12 +38,12 @@ with st.container() as obomniy_rashod_vodi:
    with input2:
        var_ro = st.number_input("Плотность измеряемой среды (ρ) ")
    with func2:
-       f = simplify(G/ρ)
+       f = simplify(G/ρ*1000)
        st.write(f)
    with res2:
        st.write("Ответ:")
        if var_ro:
-           var_Gob = var_G/var_ro #Объемный расход воды
+           var_Gob = var_G/var_ro*1000 #Объемный расход воды
            st.markdown(round(var_Gob, 7))
 with st.container() as skorost_vodi_v_trube:
    st.markdown('Расчет скорости воды в трубе(V, м/с :')
