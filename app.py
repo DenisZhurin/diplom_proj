@@ -126,7 +126,7 @@ with st.container() as koef_sopr_trenia:
         var_sin = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
         var_D2 = st.number_input("Диаметр после диффузора (D2, )")
     with func8:
-        f = simplify(Kд*3.2*(1-((d/D2)**2))**2*tan(d/2)**1.25)
+        f = simplify(Kд*3.2*(1-((d/D2)**2))**2*(tan(d/2))**1.25)
         st.write(f)
     with res8:
         st.write("Ответ:")
