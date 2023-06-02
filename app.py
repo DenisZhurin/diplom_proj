@@ -119,7 +119,7 @@ with st.container() as koef_pol:
             var_koef_ner = -0.24*math.log(10, var_Re)+2.869
             st.markdown(var_koef_ner) 
             
- with st.container() as koef_sopr_trenia:
+with st.container() as koef_sopr_trenia:
     st.markdown('Коэффициент сопротивления расширения(ξтр,')
     input8, func8, res8 = st.columns(3)
     with input8:
