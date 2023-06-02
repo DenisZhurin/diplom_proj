@@ -52,7 +52,7 @@ with st.container() as skorost_vodi_v_trube:
         var_Q = st.number_input("Расход жидкости (Q, л/с)")
         var_d = st.number_input("Внутренний диаметр трубы (d, мм)")
     with func3:
-        f = simplify((1000/3,6)*Q/((π*d**2)/4))
+        f = simplify((1000/3,6)*Q/((π*(d**2)/4))
         st.write(f)
     with res3:
         st.write("Ответ:")
