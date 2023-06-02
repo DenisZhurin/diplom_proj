@@ -116,7 +116,7 @@ with st.container() as koef_pol:
     with res_ner:
         st.write("Ответ:")
         if var_d:
-            var_koef_ner = -0.24*log(10, var_Re)+2.869
+            var_koef_ner = -0.24*math.log(10, var_Re)+2.869
             st.markdown(var_koef_ner) 
 
 with st.container() as uravnenie_darsi:
