@@ -111,7 +111,7 @@ with st.container() as koef_pol:
     with input_ner:
         ""
     with func_ner:
-        f = simplify(-0.24*log10(Re)+2.869)
+        f = simplify(-0.24*math.log10(Re)+2.869)
         st.write(f)
     with res_ner:
         st.write("Ответ:")
