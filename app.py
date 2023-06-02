@@ -24,7 +24,7 @@ with st.container() as rashod_setevoi_vodi:
        Tp = st.slider('Температура воды в подающем трубопроводе (Тп)', 0, 200, 95)
        To = st.slider('Температура воды в обратном трубопроводе (Тоб)', 0, 150, 70)
    with func1:
-       f = simplify(-Qот*1000 / (Tп - Tоб))
+       f = simplify(Qот*1000 / (Tп - Tоб))
        st.write(f)
    with res1:
        st.write("Ответ:")
