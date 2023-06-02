@@ -158,7 +158,7 @@ with st.container() as koef_rasher:
         st.write(f)
     with res9:
         st.write("Ответ:")
-        if var_n:
+        if var_D2:
             var_kd = -0.24 * log(var_Re) + 2.869
             var_rasch = (((1 - var_n ** 2) ** 2) * 3.2 * var_kd * tan(
                 (var_sin / 2) ** 1.25))  # Коэффициента сопротивления расширения
