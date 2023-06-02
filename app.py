@@ -70,6 +70,7 @@ with st.container() as poteri_vazkost:
         ""
     with func_new:
         f = simplify(0.00000178 / (1 + 0.037 + Tп + 0.000221 * Tп ** 2))
+        st.write(f)
     with res_new:
         st.write("Ответ:")
         if var_d:
