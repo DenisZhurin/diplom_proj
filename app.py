@@ -38,7 +38,7 @@ with st.container() as obomniy_rashod_vodi:
     with input2:
         var_ro = st.number_input("Плотность измеряемой среды (ρ) ")
     with func2:
-        f = simplify(G/ρ)
+        f = simplify((G/ρ)*1000)
         st.write(f)
     with res2:
         st.write("Ответ:")
