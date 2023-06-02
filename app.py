@@ -101,7 +101,7 @@ with st.container() as formula_altuchla:
         st.write(f)
     with res6:
         st.write("Ответ:")
-        if var_v0:
+        if var_d:
             var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
             st.markdown(round(var_lam, 7))
 with st.container() as uravnenie_darsi:
