@@ -69,12 +69,12 @@ with st.container() as poteri_vazkost:
     with input_new:
         ""
     with func_new:
-        f = simplify(0.00000178 / (1 + 0.037 + Tp + 0.000221 * Tp ** 2))
+        f = simplify(0.00000178 / (1 + 0.037 + Tп + 0.000221 * Tп ** 2))
         st.write(f)
     with res_new:
         st.write("Ответ:")
         if var_d:
-            var_mu = 0.00000178 / (1 + 0.037 + Tp + 0.000221 * Tp ** 2)
+            var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2)))
             st.markdown(var_mu)
 
 with st.container() as chislo_raynoldsa:
