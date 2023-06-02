@@ -76,6 +76,7 @@ with st.container() as poteri_vazkost:
         if var_d:
             var_mu = 0.00000178 / (1 + 0.037 + Tp + 0.000221 * Tp ** 2)
             st.markdown(var_mu)
+
 with st.container() as chislo_raynoldsa:
     st.markdown('Число Рейнольдса(Re)')
     space5, func5, res5 = st.columns(3)
@@ -86,10 +87,10 @@ with st.container() as chislo_raynoldsa:
         st.write(f)
     with res5:
         st.write("Ответ:")
-        if var_v0:
-            var_koef = 0.000000299
-            var_Re = (var_d * var_V / var_koef)  # Число Рейнольдса
+        if var_d:
+            var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
             st.markdown(round(var_Re, 10))
+            
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля(λ)')
     space6, func6, res6 = st.columns(3)
