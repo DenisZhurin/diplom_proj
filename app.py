@@ -104,6 +104,21 @@ with st.container() as formula_altuchla:
         if var_d:
             var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
             st.markdown(round(var_lam, 7))
+
+with st.container() as koef_pol:
+    st.markdown('Коффициент неравомерного поля скоростей')
+    input_ner, func_ner, res_ner = st.columns(3)
+    with input_ner:
+        ""
+    with func_ner:
+        f = simplify(-0.24*math.log10(Re)+2.869)
+        st.write(f)
+    with res_ner:
+        st.write("Ответ:")
+        if var_v0:
+            var_koef_ner = -0.24*math.log10(var_Re)+2.869
+            st.markdown(var_koef_ner) 
+
 with st.container() as uravnenie_darsi:
     st.markdown('Уравнение Дарси(hl, м в. ст.,')
     input7, func7, res7 = st.columns(3)
