@@ -14,8 +14,8 @@ def open_link(url, new_tab=True):
     st.bokeh_chart(div)
 
 
-Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, LOg10(Re) = symbols(
-    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд LOg10(Re)")  # переменные для формул
+Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд = symbols(
+    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд ")  # переменные для формул
 # Qot = 0.6565 #Тепловая нагрузка отопление
 # Tp = 95 #температура воды в подающем трубопроводе
 # To = 70 #температура воды в обратном трубопроводе
@@ -111,12 +111,12 @@ with st.container() as koef_pol:
     with input_ner:
         ""
     with func_ner:
-        f = simplify(-0.24*LOg10(Re)+2.869)
+        f = simplify(-0.24*log10(Re)+2.869)
         st.write(f)
     with res_ner:
         st.write("Ответ:")
         if var_v0:
-            var_koef_ner = -0.24*math.log(10, var_Re)+2.869
+            var_koef_ner = -0.24*log(10, var_Re)+2.869
             st.markdown(var_koef_ner) 
 
 with st.container() as uravnenie_darsi:
