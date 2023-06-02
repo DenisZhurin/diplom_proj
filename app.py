@@ -74,7 +74,7 @@ with st.container() as poteri_vazkost:
     with res_new:
         st.write("Ответ:")
         if var_d:
-            var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2)))
+            var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2))
             st.markdown(var_mu)
 
 with st.container() as chislo_raynoldsa:
