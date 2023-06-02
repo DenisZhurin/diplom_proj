@@ -49,7 +49,6 @@ with st.container() as skorost_vodi_v_trube:
    st.markdown('Расчет скорости воды в трубе(V, м/с :')
    input3, func3, res3 = st.columns(3)
    with input3:
-       var_Q = st.number_input("Расход жидкости (Q, л/с)")
        var_d = st.number_input("Внутренний диаметр трубы (d, мм)")
    with func3:
        f = simplify(1000*Q/(π*(d**2/4)))
@@ -57,7 +56,7 @@ with st.container() as skorost_vodi_v_trube:
    with res3:
        st.write("Ответ:")
        if var_d:
-           var_V = (277.777777778*var_Q)/((var_d**2*math.pi)/4)  # Объемный расход воды
+           var_V = (277.777777778*var_Gob)/((var_d**2*math.pi)/4)  # Объемный расход воды
            st.markdown(round(var_V, 7))
 with st.container() as poteri_napora_v_konfuzore:
    st.markdown('Потери напора в конфузоре(hk')
