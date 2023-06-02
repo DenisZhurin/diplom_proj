@@ -131,7 +131,7 @@ with st.container() as koef_sopr_trenia:
     with res8:
         st.write("Ответ:")
         if var_D2:
-            var_tr = (var_koef_ner*3.2*(1-((var_d/var_D2)**2))**2*tan(var_d/2)**1.25)  # Kоэффициент сопротивления трения
+            var_tr = (var_koef_ner*3.2*(1-((var_d/var_D2)**2))**2*(tan(var_d/2))**1.25)  # Kоэффициент сопротивления трения
             st.markdown(round(var_tr, 7))
 
 with st.container() as uravnenie_darsi:
