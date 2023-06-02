@@ -57,7 +57,7 @@ with st.container() as skorost_vodi_v_trube:
    with res3:
        st.write("Ответ:")
        if var_d:
-           var_V = (4000*var_Q)/(var_d**2*math.pi)  # Объемный расход воды
+           var_V = (277.777777778*var_Q)/((var_d**2*math.pi)/4)  # Объемный расход воды
            st.markdown(round(var_V, 7))
 with st.container() as poteri_napora_v_konfuzore:
    st.markdown('Потери напора в конфузоре(hk')
