@@ -72,9 +72,9 @@ with st.container() as poteri_vazkost:
         f = simplify(0.00000178 / (1 + 0.037 + Tп + 0.000221 * Tп ** 2))
     with res_new:
         st.write("Ответ:")
-    if var_V:
-        var_mu = 0.00000178 / (1 + 0.037 + Tp + 0.000221 * Tp ** 2)
-        st.markdown(var_mu)
+        if var_V:
+            var_mu = 0.00000178 / (1 + 0.037 + Tp + 0.000221 * Tp ** 2)
+            st.markdown(var_mu)
 with st.container() as poteri_napora_v_konfuzore:
     st.markdown('Потери напора в конфузоре(hk')
     input4, func4, res4 = st.columns(3)
