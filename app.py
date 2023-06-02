@@ -59,17 +59,17 @@ with st.container() as skorost_vodi_v_trube:
            var_V = (277.777777778*var_Gob)/((var_d**2*math.pi)/4)  # Объемный расход воды
            st.markdown(round(var_V, 7))
  with st.container() as poteri_vazkost:
-  st.markdown('Кинематическая вязкость воды(ʋ, м^2/с') #Кинематическая вязкость воды
-  input_new, func_new, res_new = st.columns(3)
-  with input_new:
-   ""
-  with func_new:
-   f = simplify(0.00000178/(1+0.037+Tп+0.000221*Tп**2))
-  with res_new:
+    st.markdown('Кинематическая вязкость воды(ʋ, м^2/с') #Кинематическая вязкость воды
+    input_new, func_new, res_new = st.columns(3)
+    with input_new:
+      ""
+   with func_new:
+      f = simplify(0.00000178/(1+0.037+Tп+0.000221*Tп**2))
+   with res_new:
    st.write("Ответ:")
-   if var_V:
-    var_mu = 0.00000178/(1+0.037+Tp+0.000221*Tp**2)
-    st.markdown(var_mu)
+      if var_V:
+         var_mu = 0.00000178/(1+0.037+Tp+0.000221*Tp**2)
+         st.markdown(var_mu)
 with st.container() as poteri_napora_v_konfuzore:
    st.markdown('Потери напора в конфузоре(hk')
    input4, func4, res4 = st.columns(3)
