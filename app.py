@@ -14,8 +14,8 @@ def open_link(url, new_tab=True):
     st.bokeh_chart(div)
 
 
-Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2, log = symbols(
-    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2 log")  # переменные для формул
+Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2 = symbols(
+    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2")  # переменные для формул
 # Qot = 0.6565 #Тепловая нагрузка отопление
 # Tp = 95 #температура воды в подающем трубопроводе
 # To = 70 #температура воды в обратном трубопроводе
@@ -111,7 +111,7 @@ with st.container() as koef_pol:
     with input_ner:
         ""
     with func_ner:
-        f = simplify(-0.24*(log(Re))+2.869)
+        f = simplify(-0.24*(log_10(Re))+2.869)
         st.write(f)
     with res_ner:
         st.write("Ответ:")
