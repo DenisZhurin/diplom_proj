@@ -2,7 +2,7 @@ import streamlit as st
 from bokeh.models.widgets import Div
 from sympy import *
 import math
-
+import numpy as np
 
 def open_link(url, new_tab=True):
     if new_tab:
@@ -14,8 +14,8 @@ def open_link(url, new_tab=True):
     st.bokeh_chart(div)
 
 
-Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2 = symbols(
-    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2")  # переменные для формул
+Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2, log = symbols(
+    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2 log")  # переменные для формул
 # Qot = 0.6565 #Тепловая нагрузка отопление
 # Tp = 95 #температура воды в подающем трубопроводе
 # To = 70 #температура воды в обратном трубопроводе
@@ -111,12 +111,12 @@ with st.container() as koef_pol:
     with input_ner:
         ""
     with func_ner:
-        f = simplify(-0.24*simplify(log(10, Re))+2.869)
+        f = simplify(-0.24*(log(Re))+2.869)
         st.write(f)
     with res_ner:
         st.write("Ответ:")
         if var_d:
-            var_koef_ner = -0.24*math.log(10, var_Re)+2.869
+            var_koef_ner = -0.24*math.log10(var_Re)+2.869
             st.markdown(var_koef_ner) 
             
 with st.container() as koef_sopr_trenia:
