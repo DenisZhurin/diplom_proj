@@ -3,7 +3,7 @@ from bokeh.models.widgets import Div
 from sympy import *
 import math
 import numpy as np
-
+from sympy import log as log_sympy
 def open_link(url, new_tab=True):
     if new_tab:
         js = f"window.open('{url}')"
@@ -111,7 +111,7 @@ with st.container() as koef_pol:
     with input_ner:
         ""
     with func_ner:
-        f = simplify(-0.24*(st.markdown("log_10")(Re))+2.869)
+        f = simplify(-0.24*(log_sympy(10, Re))+2.869)
         st.write(f)
     with res_ner:
         st.write("Ответ:")
