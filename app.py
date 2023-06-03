@@ -159,7 +159,7 @@ with st.container() as koef_rasher:
     with func9:
         drob = simplify(d/D2)
         kvadr = simplify((1 - drob)**4)
-        f = simplify(λ/(8*(sin(α/2)) * (kvadr))
+        f = simplify(λ/(8*(sin(α/2)) * (kvadr)))
         st.write(f)
     with res9:
         st.write("Ответ:")
