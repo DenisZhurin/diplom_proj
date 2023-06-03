@@ -216,7 +216,7 @@ with st.container() as poteri_pryamo:
         st.write("Ответ:")
         if var_L:
             var_lam_hidden = (0.11 * (68 / var_Re + 0.03 / var_d) ** 0.25)
-            var_potery_praymo = var_lam*(8*var_V + 10) + var_lam_hidden * var_L - var_lam_hidden*(8*var_d+10) * (var_V**2/(2*9.81*var_d))
+            var_potery_praymo = (var_lam*(8*var_V+10)+var_lam_hidden*var_L - var_lam_hidden*(8*var_d+10))*var_V**2/(2*9.81*var_d)
             st.markdown(var_potery_praymo)
             
 with st.container() as poteri_diff:
