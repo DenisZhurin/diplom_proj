@@ -61,9 +61,8 @@ with st.container() as skorost_vodi_v_trube:
         st.write(f)
     with res3:
         st.write("Ответ:")
-        if var_d:
-            var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
-            st.markdown(round(var_V, 7))
+        var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
+        st.markdown(round(var_V, 7))
 with st.container() as poteri_vazkost:
     st.markdown('Кинематическая вязкость воды(ʋ, м^2/с)')  # Кинематическая вязкость воды
     input_new, func_new, res_new = st.columns(3)
@@ -73,10 +72,9 @@ with st.container() as poteri_vazkost:
         f = simplify(0.00000178 / (1 + 0.037 + Tп + 0.000221 * Tп ** 2))
         st.write(f)
     with res_new:
-        st.write("Ответ:")
-        if var_d:
-            var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2))
-            st.markdown(var_mu)
+        st.write("Ответ:")   
+        var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2))
+        st.markdown(var_mu)
 
 with st.container() as chislo_raynoldsa:
     st.markdown('Число Рейнольдса(Re)')
@@ -88,9 +86,8 @@ with st.container() as chislo_raynoldsa:
         st.write(f)
     with res5:
         st.write("Ответ:")
-        if var_d:
-            var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
-            st.markdown(round(var_Re, 10))
+        var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
+        st.markdown(round(var_Re, 10))
             
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля(λ)')
