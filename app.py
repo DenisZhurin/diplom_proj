@@ -34,9 +34,8 @@ with st.container() as rashod_setevoi_vodi:
         st.write(f)
     with res1:
         st.write("Ответ:")
-        if var_Qot:
-            var_G = var_Qot * 1000 / (Tp - To)  # Расчет расхода сетевой воды
-            st.markdown(round(var_G, 7))
+        var_G = var_Qot * 1000 / (Tp - To)  # Расчет расхода сетевой воды
+        st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
     st.markdown('Расчет объёмного расчёта воды (Qоб, м3/ч :')
@@ -48,9 +47,9 @@ with st.container() as obomniy_rashod_vodi:
         st.write(f)
     with res2:
         st.write("Ответ:")
-        if var_ro:
-            var_Gob = var_G / var_ro * 1000  # Объемный расход воды
-            st.markdown(round(var_Gob, 7))
+     
+        var_Gob = var_G / var_ro * 1000  # Объемный расход воды
+        st.markdown(round(var_Gob, 7))
 with st.container() as skorost_vodi_v_trube:
     st.markdown('Расчет скорости воды в трубе(V, м/с :')
     input3, func3, res3 = st.columns(3)
