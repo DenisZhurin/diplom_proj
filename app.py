@@ -111,12 +111,12 @@ with st.container() as koef_pol:
     with input_ner:
         ""
     with func_ner:
-        f = simplify(-0.24*(log_sympy(10, Re))+2.869)
+        f = simplify(-0.24* log_sympy(Re) + 2.869)
         st.write(f)
     with res_ner:
         st.write("Ответ:")
         if var_d:
-            var_koef_ner = -0.24*math.log10(var_Re)+2.869
+            var_koef_ner = -0.24 * math.log10(var_Re) + 2.869
             st.markdown(var_koef_ner) 
             
 with st.container() as koef_sopr_trenia:
