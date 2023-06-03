@@ -174,11 +174,11 @@ with st.container() as soprot_konfuz:
         print()
     with func10:
         drob = simplify(d/D1)
-#         slog_1 = simplify(-0.0125 * (drob)**8 + 0.0224*(drob)**6 - 0.00723(drob)**4 + 0.00444(drob)**2 - 0.000745)
+        slog_1 = simplify(-0.0125 * (drob)**8 + 0.0224*(drob)**6 - 0.00723(drob)**4 + 0.00444(drob)**2 - 0.000745)
         slog_2 = simplify((0.01745* α)**3 - 2*π*(0.01745*α)**2 - 10*0.01745*α)
         slog_3 = ξтр
-#         f = simplify(slog_1 * slog_2 + slog_3)
-        st.write(drob + slog_2 + slog_3)
+        f = simplify(slog_1 * slog_2 + slog_3)
+        st.write(f)
     with res10:
         st.write("Ответ:")
 #         if var_D2:
