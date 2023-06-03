@@ -39,10 +39,10 @@ with st.container() as rashod_setevoi_vodi:
             st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
-    st.markdown('Расчет объёмного расчёта воды (Qоб, м3/ч :')
+    st.markdown('Расчет объёмного расчёта воды (Qоб, м3/ч')
     input2, func2, res2 = st.columns(3)
     with input2:
-        var_ro = st.number_input("Плотность измеряемой среды (ρ) ")
+        var_ro = st.number_input("Плотность измеряемой среды (ρ, кг/м^3)")
     with func2:
         f = simplify(G / ρ * 1000)
         st.write(f)
@@ -52,7 +52,7 @@ with st.container() as obomniy_rashod_vodi:
             var_Gob = var_G / var_ro * 1000  # Объемный расход воды
             st.markdown(round(var_Gob, 7))
 with st.container() as skorost_vodi_v_trube:
-    st.markdown('Расчет скорости воды в трубе(V, м/с :')
+    st.markdown('Расчет скорости воды в трубе(V, м/с)')
     input3, func3, res3 = st.columns(3)
     with input3:
         var_d = st.number_input("Внутренний диаметр трубы (d, мм)")
@@ -93,7 +93,7 @@ with st.container() as chislo_raynoldsa:
             st.markdown(round(var_Re, 10))
             
 with st.container() as formula_altuchla:
-    st.markdown('Универсальная формула Альтшуля(λ)')
+    st.markdown('Универсальная формула Альтшуля (коэффициент гидравлического трения)(λ)')
     space6, func6, res6 = st.columns(3)
     with space6:
         print()
@@ -107,7 +107,7 @@ with st.container() as formula_altuchla:
             st.markdown(var_lam)
 
 with st.container() as koef_pol:
-    st.markdown('Коффициент неравомерного поля скоростей')
+    st.markdown('Коффициент неравомерного поля скоростей (Kд)')
     input_ner, func_ner, res_ner = st.columns(3)
     with input_ner:
         ""
@@ -121,7 +121,7 @@ with st.container() as koef_pol:
             st.markdown(var_koef_ner) 
             
 with st.container() as koef_sopr_trenia:
-    st.markdown('Коэффициент сопротивления расширения(ξрасш,')
+    st.markdown('Коэффициент сопротивления расширения(ξрасш')
     input8, func8, res8 = st.columns(3)
     with input8:
         var_aplha = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
@@ -138,10 +138,10 @@ with st.container() as koef_sopr_trenia:
             st.markdown(var_rash)
 
 # with st.container() as uravnenie_darsi:
-#     st.markdown('Уравнение Дарси(hl, м в. ст.,')
+#     st.markdown('Уравнение Дарси(потери напора на прямом участке)(hl, м в. ст.')
 #     input7, func7, res7 = st.columns(3)
 #     with input7:
-#         var_L = st.number_input("Длина прямолинейного участка (L, мм)")
+#         var_L = st.number_input("Длина прямого участка (L, мм)")
 #     with func7:
 #         f = simplify(λ * L / d * (V ** 2) / (2 * g))
 #         st.write(f)
@@ -191,7 +191,7 @@ with st.container() as soprot_konfuz:
             st.markdown(var_e_konf)
             
 with st.container() as poteri_konfuz:
-    st.markdown('Потеря напора на конфузоре (hk)')
+    st.markdown('Потеря напора на конфузоре (hk, м в. ст.)')
     space_potery, func_potery, res_potery = st.columns(3)
     with space_potery:
         print()
@@ -205,7 +205,7 @@ with st.container() as poteri_konfuz:
             st.markdown(var_potery_konfuz)
             
 with st.container() as poteri_pryamo:
-    st.markdown('Потеря напора на прямом участке (hl)')
+    st.markdown('Потеря напора на прямом участке (hl, м в. ст.)')
     space_pryamo, func_pryamo, res_pryamo = st.columns(3)
     with space_pryamo:
         var_L = st.number_input("Длина прямого участка (L)")
@@ -220,7 +220,7 @@ with st.container() as poteri_pryamo:
             st.markdown(var_potery_praymo)
             
 with st.container() as poteri_diff:
-    st.markdown('Потеря напора на диффузоре (hд)')
+    st.markdown('Потеря напора на диффузоре (hд, м в. ст.)')
     space_diff, func_diff, res_diff = st.columns(3)
     with space_diff:
         print()
