@@ -15,8 +15,8 @@ def open_link(url, new_tab=True):
     st.bokeh_chart(div)
 
 
-Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2 = symbols(
-    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2")  # переменные для формул
+Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2, D1 = symbols(
+    "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2 D1")  # переменные для формул
 # Qot = 0.6565 #Тепловая нагрузка отопление
 # Tp = 95 #температура воды в подающем трубопроводе
 # To = 70 #температура воды в обратном трубопроводе
@@ -125,7 +125,7 @@ with st.container() as koef_sopr_trenia:
     input8, func8, res8 = st.columns(3)
     with input8:
         var_aplha = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
-        var_D2 = st.number_input("Диаметр после диффузора (D2, )")
+        var_D2 = st.number_input("Диаметр перед конфузором и после диффузора (D1, D2)")
     with func8:
         drob = simplify(d/D2)
         kvadr = simplify((1 - drob**2)**2)
@@ -180,8 +180,8 @@ with st.container() as soprot_konfuz:
         st.write(f)
     with res10:
         st.write("Ответ:")
-        if var_D1:
-            slog_1 = -0.0125 * (var_d/var_D1)**(8) + 0.0224*(var_d/var_D1)**(6) - 0.00723(var_d/var_D1)**(4) + 0.00444(var_d/var_D1)**(2) - 0.000745
+        if var_D2:
+            slog_1 = -0.0125 * (var_d/var_D2)**(8) + 0.0224*(var_d/var_D2)**(6) - 0.00723(var_d/var_D2)**(4) + 0.00444(var_d/var_D2)**(2) - 0.000745
             slog_2 = (0.01745*var_aplha)**(3) - 2*π*(0.01745*var_aplha)**(2) - 10*0.01745*var_aplha
             slog_3 = var_tr
             
