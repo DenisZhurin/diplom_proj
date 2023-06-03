@@ -173,9 +173,8 @@ with st.container() as soprot_konfuz:
     with space10:
         print()
     with func10:
-        print(type(d), type(D1))
-        slog_1 = simplify(-0.0125 * (d/D1)**(8) + 0.0224*(d/D1)**(6) - 0.00723(d/D1)**(4) + 0.00444(d/D1)**(2) - 0.000745)
-        slog_2 = simplify((0.01745* α)**(3) - 2*π*(0.01745*α)**(2) - 10*0.01745*α)
+        slog_1 = simplify(-0.0125 * (d/D1)**8 + 0.0224*(d/D1)**6 - 0.00723(d/D1)**4 + 0.00444(d/D1)**2 - 0.000745)
+        slog_2 = simplify((0.01745* α)**3 - 2*pi*(0.01745*α)**2 - 10*0.01745*α)
         slog_3 = ξтр
         f = simplify(slog_1 * slog_2 + slog_3)
         st.write(f)
