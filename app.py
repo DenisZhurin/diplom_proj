@@ -163,7 +163,7 @@ with st.container() as koef_rasher:
         st.write(f)
     with res9:
         st.write("Ответ:")
-        if var_lam:
+        if var_D2:
             var_tr = var_lam/(8*(sin(var_aplha/2))) * (kvadr)
             st.write(var_tr)
 with st.container() as soprot_diffuzora:
