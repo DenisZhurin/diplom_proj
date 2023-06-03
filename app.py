@@ -166,41 +166,57 @@ with st.container() as koef_rasher:
         if var_D2:
             var_tr = var_lam/(8*(sin(var_aplha/2))) * (1 - (var_d/var_D2)**4)
             st.write(var_tr)
-with st.container() as soprot_diffuzora:
-    st.markdown('**Коэффициент сопротивления диффузора (ξ)')
+            
+with st.container() as soprot_konfuz:
+    st.markdown('Коэффициент сопротивления в конфузоре (ξк)')
     space10, func10, res10 = st.columns(3)
     with space10:
         print()
     with func10:
-        f = simplify(ξтр + ξрасш)
+        f = simplify((-0.0125 * (d/D1)**(8) + 0.0224*(d/D1)**(6) - 0.00723(d/D1)**(4) + 0.00444(d/D1)**(2) - 0.000745)* ((0.01745* α )**(3) - 2*π*(0.01745*α)**(2) - 10*0.01745*α) + ξтр))
         st.write(f)
     with res10:
+        st.write("Ответ:")
+        if var_D1:
+            var_e_konf = (-0.0125 * (var_d/var_D1)**(8) + 0.0224*(var_d/var_D1)**(6) - 0.00723(var_d/var_D1)**(4) + 0.00444(var_d/var_D1)**(2) - 0.000745)* ((0.01745* var_aplha )**(3) - 2*π*(0.01745*var_aplha)**(2) - 10*0.01745*var_aplha) + var_tr)  # Коэффициент сопротивления диффузора
+            st.markdown(var_e_konf)
+            
+            
+with st.container() as soprot_diffuzora:
+    st.markdown('**Коэффициент сопротивления диффузора (ξ)')
+    space11, func11, res11 = st.columns(3)
+    with space11:
+        print()
+    with func11:
+        f = simplify(ξтр + ξрасш)
+        st.write(f)
+    with res11:
         st.write("Ответ:")
         if var_n:
             var_e = var_tr + var_rasch  # Коэффициент сопротивления диффузора
             st.markdown(round(var_e, 7))
 with st.container() as poteri_napora:
     st.markdown('Потери напора на диффузоре  (hд, м в. ст.)')
-    space11, func11, res11 = st.columns(3)
-    with space11:
+    space12, func12, res12 = st.columns(3)
+    with space12:
         print()
-    with func11:
+    with func12:
         f = simplify((ξ * V0 ** 2) / (2 * g))
         st.write(f)
-    with res11:
+    with res12:
         st.write("Ответ:")
         if var_n:
             var_hd = (var_e * var_v0 ** 2 / 2 * 9.81)  # Коэффициент сопротивления диффузора
             st.markdown(round(var_hd, 7))
 with st.container() as itog:
     st.markdown('Итоговая формула (h, м в. ст.)')
-    space12, func12, res12 = st.columns(3)
-    with space12:
+    space13, func13, res13 = st.columns(3)
+    with space13:
         print()
-    with func12:
+    with func13:
         f = simplify(hk + hl + hд)
         st.write(f)
-    with res12:
+    with res13:
         st.write("Ответ:")
         if var_n:
             var_var = (var_hk + var_hd + var_hl)  # Коэффициент сопротивления диффузора
