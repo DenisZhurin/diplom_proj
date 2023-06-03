@@ -180,13 +180,13 @@ with st.container() as soprot_konfuz:
         st.write(f)
     with res10:
         st.write("Ответ:")
-        if var_D2:
-            slog_1 = -0.0125 * (var_d/var_D2)**(8) + 0.0224*(var_d/var_D2)**(6) - 0.00723(var_d/var_D2)**(4) + 0.00444(var_d/var_D2)**(2) - 0.000745
-            slog_2 = (0.01745*var_aplha)**(3) - 2*π*(0.01745*var_aplha)**(2) - 10*0.01745*var_aplha
-            slog_3 = var_tr
+#         if var_D2:
+#             slog_1 = -0.0125 * (var_d/var_D2)**(8) + 0.0224*(var_d/var_D2)**(6) - 0.00723(var_d/var_D2)**(4) + 0.00444(var_d/var_D2)**(2) - 0.000745
+#             slog_2 = (0.01745*var_aplha)**(3) - 2*π*(0.01745*var_aplha)**(2) - 10*0.01745*var_aplha
+#             slog_3 = var_tr
             
-            var_e_konf = slog_1 * slog_2 + slog_3 # Коэффициент сопротивления диффузора
-            st.markdown(var_e_konf)
+#             var_e_konf = slog_1 * slog_2 + slog_3 # Коэффициент сопротивления диффузора
+#             st.markdown(var_e_konf)
             
             
 with st.container() as soprot_diffuzora:
