@@ -196,7 +196,7 @@ with st.container() as poteri_konfuz:
     with space_potery:
         print()
     with func_potery:
-        f = simplify(ξк * V**2/(2*g))
+        f = simplify(ξk * V**2/(2*g))
         st.write(f)
     with res_potery:
         st.write("Ответ:")
