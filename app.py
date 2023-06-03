@@ -204,6 +204,20 @@ with st.container() as poteri_konfuz:
             var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
             st.markdown(var_potery_konfuz)
             
+with st.container() as poteri_pryamo:
+    st.markdown('Потеря напора на прямом участке (hl)')
+    space_pryamo, func_pryamo, res_pryamo = st.columns(3)
+    with space_pryamo:
+        var_L = st.number_input("Длина прямого участка (L)")
+    with func_pryamo:
+        f = simplify(λ*(8*V + 10) + λ*L - λ*(8*d+10) * (V**2/(2*g*d)))
+        st.write(f)
+    with res_pryamo:
+        st.write("Ответ:")
+        if var_L:
+            var_potery_praymo = var_lam*(8*var_V + 10) + var_lam* var_L - var_lam*(8*var_d+10) * (var_V**2/(2*9.81*var_d))
+            st.markdown(var_potery_praymo)
+            
             
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ)')
