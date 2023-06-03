@@ -124,7 +124,7 @@ with st.container() as koef_sopr_trenia:
     st.markdown('Коэффициент сопротивления расширения(ξтр,')
     input8, func8, res8 = st.columns(3)
     with input8:
-        var_sin = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
+        var_aplha = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
         var_D2 = st.number_input("Диаметр после диффузора (D2, )")
     with func8:
         drob = simplify(d/D2)
@@ -137,35 +137,34 @@ with st.container() as koef_sopr_trenia:
             var_tr = (var_koef_ner* 3.2 *(1- ((var_d/var_D2)**2))**(2) *(math.tan(var_d/2))**1.25)  # Kоэффициент сопротивления трения
             st.markdown(round(var_tr, 7))
 
-with st.container() as uravnenie_darsi:
-    st.markdown('Уравнение Дарси(hl, м в. ст.,')
-    input7, func7, res7 = st.columns(3)
-    with input7:
-        var_L = st.number_input("Длина прямолинейного участка (L, мм)")
-    with func7:
-        f = simplify(λ * L / d * (V ** 2) / (2 * g))
-        st.write(f)
-    with res7:
-        st.write("Ответ:")
-        if var_L:
-            var_hl = (var_lam * var_L / var_d * (var_V ** 2) / (2 * 9.81))  # Линейные потери напора на прямом
-            st.markdown(round(var_hl, 7))
+# with st.container() as uravnenie_darsi:
+#     st.markdown('Уравнение Дарси(hl, м в. ст.,')
+#     input7, func7, res7 = st.columns(3)
+#     with input7:
+#         var_L = st.number_input("Длина прямолинейного участка (L, мм)")
+#     with func7:
+#         f = simplify(λ * L / d * (V ** 2) / (2 * g))
+#         st.write(f)
+#     with res7:
+#         st.write("Ответ:")
+#         if var_L:
+#             var_hl = (var_lam * var_L / var_d * (var_V ** 2) / (2 * 9.81))  # Линейные потери напора на прямом
+#             st.markdown(round(var_hl, 7))
 
 with st.container() as koef_rasher:
-    st.markdown('Коэффициент сопротивления расширения (ξрасш)')
+    st.markdown('Коэффициент сопротивления трения (ξтр)')
     space9, func9, res9 = st.columns(3)
     with space9:
         print()
     with func9:
-        f = simplify(((1 - (n ** 2)) * 2) * 3.2 * Kд * tan((α / 2) ** 1.25))
+        drob = simplify(d/D2)
+        kvadr = simplify((1 - drob)**4)
+        f = simplify(λ/(8*(sin(α/2)) * (kvadr))
         st.write(f)
     with res9:
         st.write("Ответ:")
-        if var_D2:
-            var_kd = -0.24 * log(var_Re) + 2.869
-            var_rasch = (((1 - var_n ** 2) ** 2) * 3.2 * var_kd * tan(
-                (var_sin / 2) ** 1.25))  # Коэффициента сопротивления расширения
-            st.write(var_rasch)
+        var_tr = var_lam/(8*(sin(var_aplha/2)) * (kvadr)
+        st.write(var_tr)
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ)')
     space10, func10, res10 = st.columns(3)
