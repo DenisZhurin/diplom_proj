@@ -34,8 +34,9 @@ with st.container() as rashod_setevoi_vodi:
         st.write(f)
     with res1:
         st.write("Ответ:")
-        var_G = var_Qot * 1000 / (Tp - To)  # Расчет расхода сетевой воды
-        st.markdown(round(var_G, 7))
+        if var_Qot:
+            var_G = var_Qot * 1000 / (Tp - To)  # Расчет расхода сетевой воды
+            st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
     st.markdown('Расчет объёмного расчёта воды (Qоб, м3/ч :')
@@ -60,8 +61,9 @@ with st.container() as skorost_vodi_v_trube:
         st.write(f)
     with res3:
         st.write("Ответ:")
-        var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
-        st.markdown(round(var_V, 7))
+        if var_d:
+            var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
+            st.markdown(round(var_V, 7))
 with st.container() as poteri_vazkost:
     st.markdown('Кинематическая вязкость воды(ʋ, м^2/с)')  # Кинематическая вязкость воды
     input_new, func_new, res_new = st.columns(3)
@@ -71,9 +73,10 @@ with st.container() as poteri_vazkost:
         f = simplify(0.00000178 / (1 + 0.037 + Tп + 0.000221 * Tп ** 2))
         st.write(f)
     with res_new:
-        st.write("Ответ:")   
-        var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2))
-        st.markdown(var_mu)
+        st.write("Ответ:")
+        if var_d:
+            var_mu = 0.00000178/(1+0.0337*Tp+0.000221*(Tp**2))
+            st.markdown(var_mu)
 
 with st.container() as chislo_raynoldsa:
     st.markdown('Число Рейнольдса(Re)')
@@ -85,8 +88,9 @@ with st.container() as chislo_raynoldsa:
         st.write(f)
     with res5:
         st.write("Ответ:")
-        var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
-        st.markdown(round(var_Re, 10))
+        if var_d:
+            var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
+            st.markdown(round(var_Re, 10))
             
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля(λ)')
@@ -98,8 +102,9 @@ with st.container() as formula_altuchla:
         st.write(f)
     with res6:
         st.write("Ответ:")
-        var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
-        st.markdown(var_lam)
+        if var_d:
+            var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
+            st.markdown(var_lam)
 
 with st.container() as koef_pol:
     st.markdown('Коффициент неравомерного поля скоростей')
@@ -158,8 +163,9 @@ with st.container() as koef_rasher:
         st.write(f)
     with res9:
         st.write("Ответ:")
-        var_tr = var_lam/(8*(sin(var_aplha/2))) * (kvadr) 
-        st.write(var_tr)
+        if var_lam:
+            var_tr = var_lam/(8*(sin(var_aplha/2))) * (kvadr)
+            st.write(var_tr)
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ)')
     space10, func10, res10 = st.columns(3)
