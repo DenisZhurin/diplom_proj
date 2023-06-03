@@ -130,7 +130,7 @@ with st.container() as koef_sopr_trenia:
         drob = simplify(d/D2)
         kvadr = simplify((1 - drob**2)**2)
         f = simplify(3.2*Kд*kvadr*tan_sympy(d/2)**1.25)
-        st.write(drob)
+        st.write(kvadr)
     with res8:
         st.write("Ответ:")
         if var_D2:
