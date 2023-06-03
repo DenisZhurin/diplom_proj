@@ -190,6 +190,20 @@ with st.container() as soprot_konfuz:
             var_e_konf = slog_1 * slog_2 + slog_3 # Коэффициент сопротивления диффузора
             st.markdown(var_e_konf)
             
+with st.container() as poteri_konfuz:
+    st.markdown('Потеря напора на конфузоре (hk)')
+    space_potery, func_potery, res_potery = st.columns(3)
+    with space_potery:
+        print()
+    with func_potery:
+        f = simplify(ξк * V**2/(2*g))
+        st.write(f)
+    with res_potery:
+        st.write("Ответ:")
+        if var_e_konf:
+            var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
+            st.markdown(var_potery_konfuz)
+            
             
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ)')
