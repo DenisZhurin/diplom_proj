@@ -4,6 +4,7 @@ from sympy import *
 import math
 import numpy as np
 from sympy import log as log_sympy
+from sympy import tan as tan_sympy
 def open_link(url, new_tab=True):
     if new_tab:
         js = f"window.open('{url}')"
@@ -126,8 +127,10 @@ with st.container() as koef_sopr_trenia:
         var_sin = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
         var_D2 = st.number_input("Диаметр после диффузора (D2, )")
     with func8:
-        f = simplify(3.2*Kд*(1 - ((d/D2)**2))**(2) * (tan(d/2))**1.25)
-        st.write(f)
+        drob = d/D2
+        kvadr = simplify((1 - drob**2)**2)
+        f = simplify(3.2*Kд*kvadr*tan_sympy(d/2)**1.25)
+        st.write(kvadr)
     with res8:
         st.write("Ответ:")
         if var_D2:
