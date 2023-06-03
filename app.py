@@ -39,7 +39,7 @@ with st.container() as rashod_setevoi_vodi:
             st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
-    st.markdown('Расчет объёмного расчёта воды (Qоб, м3/ч')
+    st.markdown('Расчет объёмного расчёта воды (Qоб, м3/ч)')
     input2, func2, res2 = st.columns(3)
     with input2:
         var_ro = st.number_input("Плотность измеряемой среды (ρ, кг/м^3)")
