@@ -244,8 +244,8 @@ with st.container() as itog:
         st.write(f)
     with res13:
         st.write("Ответ:")
-            var_var = (var_hk + var_hd + var_hl)  # Коэффициент сопротивления диффузора
-            st.markdown(round(var_var, 7))
+        var_var = (var_hk + var_hd + var_hl)  # Коэффициент сопротивления диффузора
+        st.markdown(round(var_var, 7))
             
 with st.container() as row_description:
     var_link = st.button(label=' Счётчик подходящий для посчитаных параметров ')
