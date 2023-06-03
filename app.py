@@ -121,7 +121,7 @@ with st.container() as koef_pol:
             st.markdown(var_koef_ner) 
             
 with st.container() as koef_sopr_trenia:
-    st.markdown('Коэффициент сопротивления расширения(ξтр,')
+    st.markdown('Коэффициент сопротивления расширения(ξрасш,')
     input8, func8, res8 = st.columns(3)
     with input8:
         var_aplha = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
@@ -134,7 +134,7 @@ with st.container() as koef_sopr_trenia:
     with res8:
         st.write("Ответ:")
         if var_D2:
-            var_tr = (var_koef_ner* 3.2 *(1- ((var_d/var_D2)**2))**(2) *(math.tan(var_d/2))**1.25)  # Kоэффициент сопротивления трения
+            var_rash = (var_koef_ner* 3.2 *(1- ((var_d/var_D2)**2))**(2) *(math.tan(var_d/2))**1.25)  # Kоэффициент сопротивления трения
             st.markdown(round(var_tr, 7))
 
 # with st.container() as uravnenie_darsi:
@@ -219,6 +219,20 @@ with st.container() as poteri_pryamo:
             var_potery_praymo = var_lam*(8*var_V + 10) + var_lam_hidden * var_L - var_lam_hidden*(8*var_d+10) * (var_V**2/(2*9.81*var_d))
             st.markdown(var_potery_praymo)
             
+with st.container() as poteri_diff:
+    st.markdown('Потеря напора на диффузоре (hд)')
+    space_diff, func_diff, res_diff = st.columns(3)
+    with space_diff:
+        print()
+    with func_diff:
+        f = simplify(V**2 *(ξтр + ξрасш) / (2*g))
+        st.write(f)
+    with res_diff:
+        st.write("Ответ:")
+        if var_L:
+            var_potery_diff = var_V**2 *(var_tr + var_rash) / (2*9.81)
+            st.markdown(var_potery_diff)
+            
             
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ)')
@@ -233,6 +247,7 @@ with st.container() as soprot_diffuzora:
         if var_n:
             var_e = var_tr + var_rasch  # Коэффициент сопротивления диффузора
             st.markdown(round(var_e, 7))
+            
 with st.container() as poteri_napora:
     st.markdown('Потери напора на диффузоре  (hд, м в. ст.)')
     space12, func12, res12 = st.columns(3)
