@@ -97,7 +97,7 @@ with st.container() as formula_altuchla:
     with space6:
         print()
     with func6:
-        f = simplify(0.11 * (68 / Re + Ke / d) * 0.25)
+        f = simplify(0.11 * (68 / Re + Ke / d) ** 0.25)
         st.write(f)
     with res6:
         st.write("Ответ:")
