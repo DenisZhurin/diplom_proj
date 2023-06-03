@@ -200,9 +200,9 @@ with st.container() as poteri_konfuz:
         st.write(f)
     with res_potery:
         st.write("Ответ:")
-        if var_e_konf:
-            var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
-            st.markdown(var_potery_konfuz)
+       
+        var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
+        st.markdown(var_potery_konfuz)
             
             
 with st.container() as soprot_diffuzora:
