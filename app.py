@@ -164,7 +164,7 @@ with st.container() as koef_rasher:
     with res9:
         st.write("Ответ:")
         if var_D2:
-            var_tr = var_lam/(8*(sin(var_aplha/2))) * (kvadr)
+            var_tr = var_lam/(8*(sin(var_aplha/2))) * (1 - (var_d/var_D2)**4)
             st.write(var_tr)
 with st.container() as soprot_diffuzora:
     st.markdown('**Коэффициент сопротивления диффузора (ξ)')
