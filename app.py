@@ -135,7 +135,7 @@ with st.container() as koef_sopr_trenia:
         st.write("Ответ:")
         if var_D2:
             var_rash = (var_koef_ner* 3.2 *(1- ((var_d/var_D2)**2))**(2) *(math.tan(var_d/2))**1.25)  # Kоэффициент сопротивления трения
-            st.markdown(round(var_tr, 7))
+            st.markdown(var_rash)
 
 # with st.container() as uravnenie_darsi:
 #     st.markdown('Уравнение Дарси(hl, м в. ст.,')
