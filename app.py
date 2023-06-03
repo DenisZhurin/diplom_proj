@@ -233,20 +233,7 @@ with st.container() as poteri_diff:
             var_potery_diff = var_V**2 *(var_tr + var_rash) / (2*9.81)
             st.markdown(var_potery_diff)
             
-            
-with st.container() as soprot_diffuzora:
-    st.markdown('**Коэффициент сопротивления диффузора (ξ)')
-    space11, func11, res11 = st.columns(3)
-    with space11:
-        print()
-    with func11:
-        f = simplify(ξтр + ξрасш)
-        st.write(f)
-    with res11:
-        st.write("Ответ:")
-        if var_n:
-            var_e = var_tr + var_rasch  # Коэффициент сопротивления диффузора
-            st.markdown(round(var_e, 7))
+     
             
 with st.container() as poteri_napora:
     st.markdown('Потери напора на диффузоре  (hд, м в. ст.)')
@@ -261,6 +248,7 @@ with st.container() as poteri_napora:
         if var_n:
             var_hd = (var_e * var_v0 ** 2 / 2 * 9.81)  # Коэффициент сопротивления диффузора
             st.markdown(round(var_hd, 7))
+            
 with st.container() as itog:
     st.markdown('Итоговая формула (h, м в. ст.)')
     space13, func13, res13 = st.columns(3)
