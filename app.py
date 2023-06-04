@@ -238,7 +238,7 @@ with st.container() as itog:
     st.markdown('Итоговая формула (h, м в. ст.)')
     space13, func13, res13 = st.columns(3)
     with space13:
-        print()
+        st.write(" ")
     with func13:
         f = simplify(hk + hl + hд)
         st.write(f)
