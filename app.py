@@ -244,7 +244,7 @@ with st.container() as itog:
         st.write(f)
     with res13:
         st.write("Ответ:")
-        var_var = (var_potery_konfuz + var_potery_diff + var_potery_praymo)  # Коэффициент сопротивления диффузора
+        var_var = var_potery_konfuz + var_potery_diff + var_potery_praymo  # Коэффициент сопротивления диффузора
         st.markdown(round(var_var, 7))
             
 with st.container() as row_description:
