@@ -243,9 +243,10 @@ with st.container() as itog:
         f = simplify(hk + hl + hд)
         st.write(f)
     with res13:
-        st.write("Ответ:")
-        var_var = var_potery_konfuz + var_potery_diff + var_potery_praymo  # Коэффициент сопротивления диффузора
-        st.markdown(round(var_var, 7))
+        if var_L:
+            st.write("Ответ:")
+            var_var = (var_potery_konfuz + var_potery_diff + var_potery_praymo)  # Коэффициент сопротивления диффузора
+            st.markdown(round(var_var, 7))
             
 with st.container() as row_description:
     var_link = st.button(label=' Счётчик подходящий для посчитаных параметров ')
