@@ -23,7 +23,7 @@ Cот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд
 st.set_page_config(layout="wide")
 st.title('Журин Денис ВКР')
 with st.container() as rashod_setevoi_vodi:
-    st.markdown('Расчет массового расхода воды (C, т/ч)')
+    st.markdown('Расчет массового расхода воды (G, т/ч)')
     input1, func1, res1 = st.columns(3)
     with input1:
         var_Cot = st.number_input("Введите тепловую нагрузку отопления (C, м3/ч)")
