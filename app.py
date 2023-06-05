@@ -15,7 +15,7 @@ def open_link(url, new_tab=True):
     st.bokeh_chart(div)
 
 
-Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2, D1 = symbols(
+Cот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд, ξтр, ξрасш, ξ, hk, hl, hд, D2, D1 = symbols(
     "Qот Tп Tоб G ρ π d Q g V0 ξk ʋ V λ Re Ke L α n Kд ξтр ξрасш ξ hk hl hд D2 D1")  # переменные для формул
 # Qot = 0.6565 #Тепловая нагрузка отопление
 # Tp = 95 #температура воды в подающем трубопроводе
@@ -23,19 +23,19 @@ Qот, Tп, Tоб, G, ρ, π, d, Q, g, V0, ξk, ʋ, V, λ, Re, Ke, L, α, n, Kд
 st.set_page_config(layout="wide")
 st.title('Журин Денис ВКР')
 with st.container() as rashod_setevoi_vodi:
-    st.markdown('Расчет массового расхода воды (G, т/ч)')
+    st.markdown('Расчет массового расхода воды (C, т/ч)')
     input1, func1, res1 = st.columns(3)
     with input1:
         var_Qot = st.number_input("Введите тепловую нагрузку отопления (G, м3/ч)")
         Tp = st.slider('Температура воды в подающем трубопроводе (Тп)', 0, 200, 95)
         To = st.slider('Температура воды в обратном трубопроводе (Тоб)', 0, 150, 70)
     with func1:
-        f = simplify(-Qот * 1000 / (Tп - Tоб))
+        f = simplify(-Cот * 1000 / (Tп - Tоб))
         st.write(f)
     with res1:
         st.write("Ответ:")
-        if var_Qot:
-            var_G = var_Qot * 1000 / (Tp - To)  # Расчет массового расхода воды
+        if var_Cot:
+            var_G = var_Cot * 1000 / (Tp - To)  # Расчет массового расхода воды
             st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
