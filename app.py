@@ -26,7 +26,7 @@ with st.container() as rashod_setevoi_vodi:
     st.markdown('Расчет массового расхода воды (G, т/ч)')
     input1, func1, res1 = st.columns(3)
     with input1:
-        var_Cot = st.number_input("Тепловую нагрузку отопления (C, м^3/ч)")
+        var_Cot = st.number_input("Тепловая нагрузка отопления (C, м^3/ч)")
         Tp = st.slider('Температура воды в подающем трубопроводе (Тп)', 0, 200, 95)
         To = st.slider('Температура воды в обратном трубопроводе (Тоб)', 0, 150, 70)
     with func1:
