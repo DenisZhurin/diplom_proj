@@ -104,7 +104,7 @@ with st.container() as formula_altuchla:
         st.write("Ответ:")
         if var_d:
             var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
-            st.markdown(var_lam, 5)
+            st.markdown(round(var_lam, 5))
 
 with st.container() as koef_pol:
     st.markdown('Коффициент неравомерного поля скоростей (Kд)')
