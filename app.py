@@ -204,20 +204,19 @@ with st.container() as poteri_konfuz:
             var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
             st.markdown(round(var_potery_konfuz, 5))
             
-with st.container() as poteri_pryamo:
-    st.markdown('Потеря напора на прямом участке (Закон Дарси) (hl, м в. ст.)')
-    space_pryamo, func_pryamo, res_pryamo = st.columns(3)
-    with space_pryamo:
-        var_L = st.number_input("Длина прямого участка (L)")
-    with func_pryamo:
-        f = simplify(λ*(8*V + 10) + λ*L - λ*(8*d+10) * (V**2/(2*g*d)))
-        st.write(f)
-    with res_pryamo:
-        st.write("Ответ:")
-        if var_L:
-            var_lam_hidden = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)
-            var_potery_praymo = (var_lam*(8*var_V+10)+var_lam_hidden*var_L - var_lam_hidden*(8*var_d+10))*var_V**2/(2*9.81*var_d)
-            st.markdown(round(var_potery_praymo, 5))
+ with st.container() as uravnenie_darsi:
+     st.markdown('Уравнение Дарси(потери напора на прямом участке)(hl, м в. ст.')
+     input7, func7, res7 = st.columns(3)
+     with input7:
+         var_L = st.number_input("Длина прямого участка (L, мм)")
+     with func7:
+         f = simplify(λ * L / d * (V ** 2) / (2 * g))
+         st.write(f)
+     with res7:
+         st.write("Ответ:")
+         if var_L:
+             var_hl = (var_lam * var_L / var_d * (var_V ** 2) / (2 * 9.81))  # Линейные потери напора на прямом
+             st.markdown(round(var_hl, 7))
             
 with st.container() as poteri_diff:
     st.markdown('Потеря напора на диффузоре (hд, м в. ст.)')
