@@ -36,7 +36,7 @@ with st.container() as rashod_setevoi_vodi:
         st.write("Ответ:")
         if var_Cot:
             var_G = var_Cot * 1000 / (Tp - To)  # Расчет массового расхода воды
-            st.markdown(round(var_G, 2))
+            st.markdown(round(var_G, 7))
 
 with st.container() as obomniy_rashod_vodi:
     st.markdown('Расчет объёмного расхода воды (Qоб, м^3/ч)')
@@ -50,7 +50,7 @@ with st.container() as obomniy_rashod_vodi:
         st.write("Ответ:")
         if var_ro:
             var_Gob = var_G / var_ro * 1000  # Объемный расход воды
-            st.markdown(round(var_Gob, 2))
+            st.markdown(round(var_Gob, 7))
 with st.container() as skorost_vodi_v_trube:
     st.markdown('Расчет скорости воды в трубе(V, м/с)')
     input3, func3, res3 = st.columns(3)
@@ -63,7 +63,7 @@ with st.container() as skorost_vodi_v_trube:
         st.write("Ответ:")
         if var_d:
             var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
-            st.markdown(round(var_V, 4))
+            st.markdown(round(var_V, 7))
 with st.container() as poteri_vazkost:
     st.markdown('Кинематическая вязкость воды(ʋ, м^2/с)')  # Кинематическая вязкость воды
     input_new, func_new, res_new = st.columns(3)
@@ -90,7 +90,7 @@ with st.container() as chislo_raynoldsa:
         st.write("Ответ:")
         if var_d:
             var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
-            st.markdown(round(var_Re, 6))
+            st.markdown(round(var_Re, 10))
             
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля (коэффициент гидравлического трения)(λ)')
@@ -104,7 +104,7 @@ with st.container() as formula_altuchla:
         st.write("Ответ:")
         if var_d:
             var_lam = (0.11 * (68 / var_Re + 0.5 / var_d) ** 0.25)  # Универсальная формула Альтшуля
-            st.markdown(round(var_lam, 5))
+            st.markdown(var_lam)
 
 with st.container() as koef_pol:
     st.markdown('Коффициент неравомерного поля скоростей (Kд)')
@@ -118,7 +118,7 @@ with st.container() as koef_pol:
         st.write("Ответ:")
         if var_d:
             var_koef_ner = -0.24 * math.log10(var_Re) + 2.869
-            st.markdown(round(var_koef_ner, 5)) 
+            st.markdown(var_koef_ner) 
             
 with st.container() as koef_sopr_trenia:
     st.markdown('Коэффициент сопротивления расширения(ξрасш)')
@@ -129,13 +129,13 @@ with st.container() as koef_sopr_trenia:
     with func8:
         drob = simplify(d/D2)
         kvadr = simplify((1 - drob**2)**2)
-        f = simplify(0,5*kvadr*tan_sympy(d/2)**1.25)
+        f = simplify(3.2*Kд*kvadr*tan_sympy(d/2)**1.25)
         st.write(f)
     with res8:
         st.write("Ответ:")
         if var_D2:
             var_rash = (var_koef_ner* 3.2 *(1- ((var_d/var_D2)**2))**(2) *(math.tan(var_d/2))**1.25)  # Kоэффициент сопротивления трения
-            st.markdown(round(var_rash, 5))
+            st.markdown(var_rash)
 
 # with st.container() as uravnenie_darsi:
 #     st.markdown('Уравнение Дарси(потери напора на прямом участке)(hl, м в. ст.')
@@ -165,7 +165,7 @@ with st.container() as koef_rasher:
         st.write("Ответ:")
         if var_D2:
             var_tr = var_lam/(8*(sin(var_aplha/2))) * (1 - (var_d/var_D2)**4)
-            st.write(round(var_tr, 5))
+            st.write(var_tr)
             
 with st.container() as soprot_konfuz:
     st.markdown('Коэффициент сопротивления в конфузоре (ξк)')
@@ -188,7 +188,7 @@ with st.container() as soprot_konfuz:
             slog_3 = var_tr
             
             var_e_konf = slog_1 * slog_2 + slog_3 # Коэффициент сопротивления диффузора
-            st.markdown(round(var_e_konf, 5))
+            st.markdown(var_e_konf)
             
 with st.container() as poteri_konfuz:
     st.markdown('Потеря напора на конфузоре (hk, м в. ст.)')
@@ -202,7 +202,7 @@ with st.container() as poteri_konfuz:
         st.write("Ответ:")
         if var_D2:
             var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
-            st.markdown(round(var_potery_konfuz, 5))
+            st.markdown(var_potery_konfuz)
             
 with st.container() as poteri_pryamo:
     st.markdown('Потеря напора на прямом участке (Закон Дарси) (hl, м в. ст.)')
@@ -210,13 +210,14 @@ with st.container() as poteri_pryamo:
     with space_pryamo:
         var_L = st.number_input("Длина прямого участка (L)")
     with func_pryamo:
-        f = simplify(λ * L / d * (V ** 2) / (2 * g))
+        f = simplify(λ*(8*V + 10) + λ*L - λ*(8*d+10) * (V**2/(2*g*d)))
         st.write(f)
     with res_pryamo:
         st.write("Ответ:")
-        if var_L:     
-            var_potery_praymo = (var_lam * var_L / var_d * (var_V ** 2) / (2 * 9.81))  # Линейные потери напора на прямом
-            st.markdown(round(var_potery_praymo, 5))
+        if var_L:
+            var_lam_hidden = (0.11 * (68 / var_Re + 0.03 / var_d) ** 0.25)
+            var_potery_praymo = (var_lam*(8*var_V+10)+var_lam_hidden*var_L - var_lam_hidden*(8*var_d+10))*var_V**2/(2*9.81*var_d)
+            st.markdown(var_potery_praymo)
             
 with st.container() as poteri_diff:
     st.markdown('Потеря напора на диффузоре (hд, м в. ст.)')
@@ -230,7 +231,7 @@ with st.container() as poteri_diff:
         st.write("Ответ:")
         if var_L:
             var_potery_diff = var_V**2 *(var_tr + var_rash) / (2*9.81)
-            st.markdown(round(var_potery_diff, 5))
+            st.markdown(var_potery_diff)
           
             
 with st.container() as itog:
@@ -245,7 +246,7 @@ with st.container() as itog:
         if var_L:
             st.write("Ответ:")
             var_var = (var_potery_konfuz + var_potery_diff + var_potery_praymo)  # Коэффициент сопротивления диффузора
-            st.markdown(round(var_var, 5))
+            st.markdown(round(var_var, 7))
             
 with st.container() as row_description:
     var_link = st.button(label=' Счётчик подходящий для посчитаных параметров ')
@@ -303,3 +304,4 @@ with st.container() as row_description:
                 "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du150/")
     if (var_d > 0 or var_L > 0) and i != 1:
         if var_link: st.write("Введенны неккоректные данные")
+
