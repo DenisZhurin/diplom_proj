@@ -118,7 +118,7 @@ with st.container() as koef_pol:
         st.write("Ответ:")
         if var_d:
             var_koef_ner = -0.24 * math.log10(var_Re) + 2.869
-            st.markdown(var_koef_ner) 
+            st.markdown(round(var_koef_ner, 5) 
             
 with st.container() as koef_sopr_trenia:
     st.markdown('Коэффициент сопротивления расширения(ξрасш)')
