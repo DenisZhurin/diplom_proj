@@ -124,7 +124,7 @@ with st.container() as koef_sopr_trenia:
     st.markdown('Коэффициент сопротивления расширения(ξрасш)')
     input8, func8, res8 = st.columns(3)
     with input8:
-        var_aplha = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 30, 60))
+        var_aplha = st.selectbox("Угол раскрытия диффузора (α,градусы)", (5, 10, 20, 30, 60))
         var_D2 = st.number_input("Диаметр перед конфузором и после диффузора (D1, D2)")
     with func8:
         drob = simplify(d/D2)
