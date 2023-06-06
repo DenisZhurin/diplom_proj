@@ -36,7 +36,7 @@ with st.container() as rashod_setevoi_vodi:
         st.write("Ответ:")
         if var_Cot:
             var_G = var_Cot * 1000 / (Tp - To)  # Расчет массового расхода воды
-            st.markdown(round(var_G, 7))
+            st.markdown(round(var_G, 2))
 
 with st.container() as obomniy_rashod_vodi:
     st.markdown('Расчет объёмного расхода воды (Qоб, м^3/ч)')
@@ -50,7 +50,7 @@ with st.container() as obomniy_rashod_vodi:
         st.write("Ответ:")
         if var_ro:
             var_Gob = var_G / var_ro * 1000  # Объемный расход воды
-            st.markdown(round(var_Gob, 3))
+            st.markdown(round(var_Gob, 2))
 with st.container() as skorost_vodi_v_trube:
     st.markdown('Расчет скорости воды в трубе(V, м/с)')
     input3, func3, res3 = st.columns(3)
@@ -63,7 +63,7 @@ with st.container() as skorost_vodi_v_trube:
         st.write("Ответ:")
         if var_d:
             var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
-            st.markdown(round(var_V, 7))
+            st.markdown(round(var_V, 4))
 with st.container() as poteri_vazkost:
     st.markdown('Кинематическая вязкость воды(ʋ, м^2/с)')  # Кинематическая вязкость воды
     input_new, func_new, res_new = st.columns(3)
@@ -90,7 +90,7 @@ with st.container() as chislo_raynoldsa:
         st.write("Ответ:")
         if var_d:
             var_Re = (var_d * var_V / var_mu*1000)  # Число Рейнольдса
-            st.markdown(round(var_Re, 10))
+            st.markdown(round(var_Re, 6))
             
 with st.container() as formula_altuchla:
     st.markdown('Универсальная формула Альтшуля (коэффициент гидравлического трения)(λ)')
