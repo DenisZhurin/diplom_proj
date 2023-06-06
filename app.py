@@ -57,12 +57,12 @@ with st.container() as skorost_vodi_v_trube:
     with input3:
         var_d = st.number_input("Внутренний диаметр трубы (d, мм)")
     with func3:
-        f = simplify(Q * 1000 / 3,6) / ((π * d ** 2) / 4)
+        f = simplify(1000 * Q / (π * (d ** 2 / 4)))
         st.write(f)
     with res3:
         st.write("Ответ:")
         if var_d:
-            var_V = (var_Gob * 1000 / 3,6) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
+            var_V = (277.777777778 * var_Gob) / ((var_d ** 2 * math.pi) / 4)  # Объемный расход воды
             st.markdown(round(var_V, 7))
 with st.container() as poteri_vazkost:
     st.markdown('Кинематическая вязкость воды(ʋ, м^2/с)')  # Кинематическая вязкость воды
@@ -304,4 +304,3 @@ with st.container() as row_description:
                 "https://msk.specarmatura.ru/catalog/preobrazovatel_raskhoda_raskhodomer_vps/preobrazovatel_raskhoda_vps2_du150/")
     if (var_d > 0 or var_L > 0) and i != 1:
         if var_link: st.write("Введенны неккоректные данные")
-
