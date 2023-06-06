@@ -205,7 +205,7 @@ with st.container() as poteri_konfuz:
             st.markdown(var_potery_konfuz)
             
 with st.container() as poteri_pryamo:
-    st.markdown('Потеря напора на прямом участке (hl, м в. ст.)')
+    st.markdown('Потеря напора на прямом участке(Закон Дарси) (hl, м в. ст.)')
     space_pryamo, func_pryamo, res_pryamo = st.columns(3)
     with space_pryamo:
         var_L = st.number_input("Длина прямого участка (L)")
