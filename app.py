@@ -204,7 +204,7 @@ with st.container() as poteri_konfuz:
             var_potery_konfuz = var_e_konf * var_V/(2* 9.81) 
             st.markdown(round(var_potery_konfuz, 5))
             
- with st.container() as uravnenie_darsi:
+ with st.container() as oteri_pryamo:
      st.markdown('Уравнение Дарси(потери напора на прямом участке)(hl, м в. ст.')
      input7, func7, res7 = st.columns(3)
      with input7:
