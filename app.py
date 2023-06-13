@@ -250,6 +250,7 @@ with st.container() as itog:
             
 with st.container() as row_description:
     var_link = st.button(label=' Счётчик подходящий для посчитаных параметров ')
+    i = 0
     if var_d == 0 or var_L == 0:
         i = 1
         if var_link: st.write("Введите данные")
